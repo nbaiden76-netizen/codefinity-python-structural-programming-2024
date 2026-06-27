@@ -11,23 +11,31 @@ def get_item(lst, index):
         return None
     return lst[index]
 
-def make_none():
-    return None
-
 class TestFunctions(unittest.TestCase):
-    # Write your test methods below using assertEqual, assertNotEqual, assertTrue, assertFalse, assertIs, assertIsNone, assertIn, and assertIsInstance
-    pass
+    def test_add_equal(self):
+        self.assertEqual(add(2, 3), 5)
+
+    def test_add_not_equal(self):
+        self.assertNotEqual(add(2, 2), 5)
+
+    def test_is_even_true(self):
+        self.assertTrue(is_even(4))
+
+    def test_is_even_false(self):
+        self.assertFalse(is_even(5))
+
+    def test_get_item_is(self):
+        items = [10, 20, 30]
+        self.assertIs(get_item(items, 1), items[1])
+
+    def test_get_item_is_none(self):
+        self.assertIsNone(get_item([1, 2, 3], 10))
+
+    def test_in_list(self):
+        self.assertIn(2, [1, 2, 3])
+
+    def test_add_is_instance(self):
+        self.assertIsInstance(add(1, 2), int)
 
 if __name__ == "__main__":
     unittest.main()
-
-def test_add_equal
-    self.assertEqual(add(2, 3), 5)
-
-def test_add_not_equal
-    self.assertNotEqual(add(2, 2), 5)
-
-def test_is_even_true
-    self.assetTrue(is_even(4))
-
-def test_is_even_false 
